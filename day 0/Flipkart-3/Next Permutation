@@ -1,0 +1,41 @@
+"""
+Next Permutation
+
+Given an array perm[] of size N denoting a number. Find its next permutation. ie- rearrange the digits into the lexicographically next greater permutation. If such arrangement is not possible, it must be rearranged as the lowest possible order ie, sorted in an ascending order.
+
+
+Example 1:
+
+Input:
+N = 6
+perm[] = {1, 2, 3, 6, 5, 4}
+Output: 1 2 4 3 5 6
+"""
+
+
+//User function Template for C++
+
+class Solution {
+public:
+    void nextPermutation(int perm[], int N) {
+        int i, j;
+        for (i = N - 2; i >= 0; i--) {
+            if (perm[i] < perm[i + 1]) {
+                break;
+            }
+        }
+        if (i < 0) {
+            reverse(perm, perm + N);
+        }
+        else {
+            for (j = N - 1; j > i; j--) {
+                if (perm[j] > perm[i]) {
+                    break;
+                }
+            }
+            swap(perm[i], perm[j]);
+            reverse(perm + i + 1, perm + N);
+        }
+        //code here
+    }
+};
