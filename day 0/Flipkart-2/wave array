@@ -1,0 +1,10 @@
+Given a sorted array arr[] of distinct integers. Modify the array to look like a wave. In other words, arrange the elements into a sequence such that a1 >= a2 <= a3 >= a4 <= a5.....
+Note: The converted array must be the lexicographically smallest wave array.
+
+
+Example 1:
+
+Input:
+N = 5
+arr[] = {1,2,3,4,5}
+Output: 2 1 4 3 5
